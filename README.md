@@ -9,7 +9,7 @@ TUI-OS, el sistema operativo de texto de la organización (se instala en `/usr/l
 
 ![Ayuda con todas las teclas](docs/03-ayuda.png)
 
-*Capturas reales de la aplicación (120 columnas aprox., kitty/tmux) editando un texto de ejemplo.*
+*Capturas reales de la aplicación (100 columnas, kitty/tmux) editando un texto de ejemplo.*
 
 ```sh
 cargo run --release -- archivo.txt     # o sin argumentos: documento nuevo
