@@ -1,7 +1,15 @@
 # editTUI
 
 Editor de texto para el terminal, en Rust ([Ratatui](https://ratatui.rs)). Pensado para
-[TUI-OS](../tui-os) (se instala en `/usr/local/bin/edittui`), pero funciona en cualquier terminal.
+TUI-OS, el sistema operativo de texto de la organización (se instala en `/usr/local/bin/edittui`), pero funciona en cualquier terminal.
+
+| | |
+|---|---|
+| ![Archivo abierto](docs/01-abierto.png) | ![Búsqueda](docs/02-buscar.png) |
+
+![Ayuda con todas las teclas](docs/03-ayuda.png)
+
+*Capturas reales de la aplicación (120 columnas aprox., kitty/tmux) editando un texto de ejemplo.*
 
 ```sh
 cargo run --release -- archivo.txt     # o sin argumentos: documento nuevo
@@ -46,3 +54,12 @@ cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test
 `document.rs` (texto, deshacer, E/S), `editor.rs` (cursor, comandos, teclas) y `text.rs`
 (grafemas y anchos) no tocan el terminal y se prueban solos; `ui.rs` dibuja y se prueba con
 `TestBackend`.
+
+## Estado
+
+Versión 0.1. En esta revisión se comprobó: `cargo fmt --check`, `cargo clippy -D warnings` y 28 pruebas en verde, y el uso real en un emulador de terminal (capturas de arriba).
+No se ha vuelto a probar en la consola de Linux (TTY) en esta revisión.
+
+## Licencia
+
+[MIT](LICENSE).
