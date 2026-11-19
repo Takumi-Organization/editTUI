@@ -9,7 +9,7 @@ TUI-OS, el sistema operativo de texto de la organización (se instala en `/usr/l
 
 ![Ayuda con todas las teclas](docs/03-ayuda.png)
 
-*Capturas reales de la aplicación (100 columnas, kitty/tmux) editando un texto de ejemplo.*
+*Capturas reales de la aplicación (100 columnas, tmux) editando un texto de ejemplo, con el estilo Takumi.*
 
 ```sh
 cargo run --release -- archivo.txt     # o sin argumentos: documento nuevo
@@ -36,6 +36,10 @@ se borra con su letra), muestra caracteres anchos (CJK) con su ancho real y cons
 de línea del archivo (LF o CRLF) y su último salto de línea. Guarda de forma atómica
 (archivo temporal y renombrado) y conserva los permisos.
 
+## Diseño
+
+Estilo [Takumi](https://github.com/Takumi-Organization/takumi-design): monocromo estricto, sin color de acento. Como la consola de Linux no tiene truecolor, no usa RGB: solo los colores por defecto del terminal y modificadores. Barra de estado y coincidencias de búsqueda en vídeo inverso, números de línea y ayuda secundaria en tenue (DIM), línea actual y avisos en negrita; los avisos llevan texto (`!`), nunca solo color.
+
 ## Límites (a propósito, de momento)
 
 - Sin selección con Shift ni portapapeles del sistema: la consola de Linux no distingue
@@ -57,8 +61,8 @@ cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test
 
 ## Estado
 
-Versión 0.1. En esta revisión se comprobó: `cargo fmt --check`, `cargo clippy -D warnings` y 28 pruebas en verde, y el uso real en un emulador de terminal (capturas de arriba).
-No se ha vuelto a probar en la consola de Linux (TTY) en esta revisión.
+Versión 0.1. En esta revisión se comprobó: `cargo fmt --check`, `cargo clippy -D warnings` y 29 pruebas en verde (una comprueba que no se dibuja ningún color fuera de los por defecto), y el uso real en tmux (capturas de arriba, renderizadas con un script propio que aplica inversión, tenue y negrita).
+No se ha probado en la consola de Linux (TTY) real ni en otros terminales distintos de tmux.
 
 ## Licencia
 
